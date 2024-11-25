@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Esqueceu Senha</title>
+	<h:outputStylesheet library="estilos" name="recuperarSenha.css"/>
+</h:head>
+
+<h:body>
+    <div class="card-container">
+        <p:card styleClass="card">
+            <div class="card-header">
+                <img src="resources/imagens/logodoacao.png" alt="Logo" style="max-width: 35%; height: auto;"/>
+            </div><br/>
+
+            <p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+
+           <div class="form-container">
+                <h:form id="formulario">
+                    <h2 style="text-align: center;">Recuperação de Senha</h2>
+                    <div class="ui-g">
+                        
+                        <div class="ui-g-12">
+                            <p:outputLabel for="email" value="Email:"/>
+                            <div class="ui-input-icon-right">
+                                <i class="pi pi-envelope"/>
+                                <p:inputText id="email" style="width: 38rem;" value="#{recuperarSenhaBean.email}" placeholder="Digite seu e-mail"/>
+                            </div>
+                        </div>
+                    </div><br/>
+
+					<div class="ui-g" style="justify-content: space-between;">
+						<div class="ui-g-6">
+							<p:commandButton value="Voltar" icon="pi pi-arrow-left"
+								action="#{loginBean.logout}" update="formulario"
+								styleClass="ui-button-secondary" />
+						</div>
+						<div class="ui-g-6" style="text-align: right;">
+							<p:commandButton value="Recuperar" icon="pi pi-check"
+								action="#{recuperarSenhaBean.recuperarSenha}" update="formulario"
+								styleClass="ui-button-success" />
+						</div>
+					</div>
+
+				</h:form>	
+            </div>
+        </p:card>
+    </div>
+
+</h:body>
+</html>

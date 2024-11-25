@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Cadastre-se</title>
+    <h:outputStylesheet name="estilos/cadastroProfessor.css" />
+</h:head>
+
+<h:body>
+    
+    	
+    	<p:card styleClass="card">
+
+			<p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+    	
+    	<div class="card-header">
+		 <img src="resources/imagens/logodoacao.png" alt="Logo" style="max-width: 35%; height: auto;"/>
+		</div>
+		
+		
+	   <div class="form-container"> 
+	     <h:form id="formulario">
+	        
+	        <div class="ui-g-12">
+				<p:outputLabel for="email" value="Email:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-envelope"/>
+				<p:inputMask id="email" value="#{usuarioBean.usuario.email}" placeholder="Exemplo@gmail.com" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	        <div class="ui-g-12">
+				<p:outputLabel value="Senha:"/>
+				<div class="ui-input-icon-left">
+				<i class="pi pi-lock"/>
+				<p:password value="#{usuarioBean.usuario.senha}" placeholder="Digite sua senha" style="width: 38rem;" toggleMask="true"/>
+				<i class="pi" id="mostrarSenhaIcon" style="cursor: pointer;" onclick="senhaVisivel('senhaInput', 'mostrarSenhaIcon')"/>
+				</div>
+			</div>
+	        
+	        <div class="ui-g-12">
+				<p:outputLabel value="Senha Confirmação:"/>
+				<div class="ui-input-icon-left">
+				<i class="pi pi-lock"/>
+				<p:password value="#{usuarioBean.senhaConfirmacao}" placeholder="Confirme sua senha" style="width: 38rem;" toggleMask="true"/>
+				<i class="pi" id="mostrarSenhaIcon" style="cursor: pointer;" onclick="senhaVisivel('senhaInput', 'mostrarSenhaIcon')"/>
+				</div>
+			</div>
+			
+	        <div>  
+				
+				<div class="ui-g-9">
+					<p:commandButton id="botaoVoltar" value="Voltar" icon="pi pi-arrow-left"
+					action="enderecoProfessor.xhtml" update="formulario" styleClass="ui-button-secondary"/>
+				</div>	
+				
+				<div class="ui-g-1">
+					<p:commandButton id="botaoCadastrar" value="Cadastrar" icon="pi pi-check"
+					action="#{usuarioBean.inserir}" update="formulario"
+					styleClass="ui-button-success" style="margin-left: 25px"/>
+				</div>		
+			</div>				
+	     </h:form>
+			</div>
+    </p:card>
+</h:body>
+
+</html>

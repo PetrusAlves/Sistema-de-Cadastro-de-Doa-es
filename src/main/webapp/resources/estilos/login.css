@@ -1,0 +1,50 @@
+html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        body {
+		    background-image: url("#{resource['imagens/imagemdefundologin.jpg']}");
+		    background-size: cover; 
+		    background-repeat: no-repeat; 
+		    background-position: top; 
+		    height: 80vh; 
+		    width: 80vw; 
+		    margin: 0; 
+		    overflow: hidden;
+			 }
+
+        
+        .card-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .card-header {
+            text-align: center;
+        }
+        
+        #cardBranco {
+            width: 40rem;
+            opacity: 75%;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #formulario {
+            text-align: left;
+        }
+        
+        .form-container label {
+            display: block;
+            font-weight: bold;
+        }

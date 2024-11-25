@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Cadastre-se</title>
+    <h:outputStylesheet name="estilos/cadastroServico.css" />
+</h:head>
+
+<h:body>
+    
+    	
+    	<p:card styleClass="card">
+
+			<p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+    	
+    	<div class="card-header">
+		 <img src="resources/imagens/logodoacao.png" alt="Logo" style="max-width: 35%; height: auto;"/>
+		</div>
+		
+		
+	   <div class="form-container"> 
+	     <h:form id="formulario">
+	        
+	       <div class="ui-g-12">
+				<p:outputLabel value="Nome:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputText value="#{alunoBean.aluno.nome}" placeholder="Fulano Beltrano Cicrano" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	        <div class="ui-g-12">
+	            <p:outputLabel value="CPF:" />
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+	            <p:inputMask value="#{alunoBean.aluno.cpf}" placeholder="999-999-99" mask="999-999-99" validateMask="true" />
+        	</div>
+        	</div>
+        	
+        	<div class="ui-g-12">
+	            <p:outputLabel value="Telefone:" />
+	            <div class="ui-input-icon-right">
+				<i class="pi pi-phone"/>
+	            <p:inputMask value="#{alunoBean.aluno.telefone}" placeholder="(99) 9-99999999" mask="(99) 9-99999999" validateMask="true" />
+        	</div>
+        	</div>
+        	
+        	<div class="ui-g-12">
+	            <p:outputLabel value="Data de Nascimento:" />
+	            <div class="ui-input-icon-right">
+				<i class="pi pi-calendar-minus"/>
+	            <p:inputMask value="#{alunoBean.aluno.dataNascimento}" placeholder="99/99/9999" mask="99/99/9999" showMaskOnHover="false" />
+        	</div>
+        	</div>
+	        
+	        <div class="ui-g-12">
+				<p:outputLabel value="Qual serviço você deseja doar?"/>
+                <p:selectOneMenu value=" ">
+                    <f:selectItem itemLabel=" " itemValue=""/>
+                    <f:selectItem itemLabel="Mêcanico" itemValue="Computador"/>
+                    <f:selectItem itemLabel="Borracheiro" itemValue="Tablet"/>
+                    <f:selectItem itemLabel="Instrutor" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Motorista" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Auxiliar de Serviço Gerais" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Auxiliar de Professor" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Conserto de Celular" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Conserto de Computadores" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Segurança" itemValue="Smartphone"/>
+                    <f:facet name="footer">
+                        <p:divider styleClass="mt-0" />
+                        <h:outputText value="9 opções" style="font-weight:bold;"/>
+                    </f:facet>
+                </p:selectOneMenu>
+			</div>
+
+	        <div class="ui-g-12">
+				<p:outputLabel value="Tempo de Experiência?"/>
+                <p:selectOneMenu value=" ">
+                    <f:selectItem itemLabel=" " itemValue=""/>
+                    <f:selectItem itemLabel="1 ano a 2 ano" itemValue="Computador"/>
+                    <f:selectItem itemLabel="3 ano a 4 ano" itemValue="Tablet"/>
+                    <f:selectItem itemLabel="4 ano a 5 ano" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="+ 5 ano" itemValue="Smartphone"/>
+                    <f:facet name="footer">
+                        <p:divider styleClass="mt-0" />
+                        <h:outputText value="4 opções" style="font-weight:bold;"/>
+                    </f:facet>
+                </p:selectOneMenu>
+			</div>
+	        
+	        <div>  
+				
+				<div class="ui-g-9">
+					<p:commandButton id="botaoVoltar" value="Voltar" icon="pi pi-arrow-left"
+					action="login.xhtml" update="formulario" styleClass="ui-button-secondary"/>
+				</div>	
+				
+				<div class="ui-g-1">
+				    <p:commandButton id="botaoCadastrar" value="Proxima Página" icon="pi pi-arrow-right" iconPos="right"
+				                     action="enderecoServico.xhtml" update="formulario"
+				                     styleClass="ui-button-success" style="margin-left: -20px; width: 159px;" />
+				</div>
+
+			</div>				
+	     </h:form>
+			</div>
+    </p:card>
+</h:body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Cadastre-se</title>
+    <h:outputStylesheet name="estilos/cadastroVeiculos.css" />
+</h:head>
+
+<h:body>
+    
+    	
+    	<p:card styleClass="card">
+
+			<p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+    	
+    	<div class="card-header">
+		 <img src="resources/imagens/logodoacao.png" alt="Logo" style="max-width: 35%; height: auto;"/>
+		</div>
+		
+		
+	   <div class="form-container"> 
+	     <h:form id="formulario">
+	        
+	        <div class="ui-g-12">
+				<p:outputLabel value="Longradouro:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputText value="#{enderecoBean.endereco.longradouro}" placeholder="Conselheiro Estelita" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	       <div class="ui-g-12">
+				<p:outputLabel value="Bairro:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputText value="#{enderecoBean.endereco.bairro}" placeholder="Jacarecanga" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	       <div class="ui-g-12">
+				<p:outputLabel value="Numero:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputMask value="#{enderecoBean.endereco.numero}" placeholder="99" mask="99" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	       <div class="ui-g-12">
+				<p:outputLabel value="Cep:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputMask value="#{enderecoBean.endereco.cep}" placeholder="600000-000" mask="999999-999" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	       <div class="ui-g-12">
+				<p:outputLabel value="Complemento:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputText value="#{enderecoBean.endereco.complemento}" placeholder="Proxímo Corpo de Bombeiro" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	       <div class="ui-g-12">
+				<p:outputLabel value="Cidade:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputText value="#{enderecoBean.endereco.cidade}" placeholder="Fortaleza" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	       <div class="ui-g-12">
+				<p:outputLabel value="Estado:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputMask value="#{enderecoBean.endereco.estado}" placeholder="CE" mask="aa" style="width: 38rem;"/>
+				</div>
+			</div>
+			
+	        <div>  
+				
+				<div class="ui-g-9">
+					<p:commandButton id="botaoVoltar" value="Voltar" icon="pi pi-arrow-left"
+					action="cadastroVeiculo.xhtml" update="formulario" styleClass="ui-button-secondary"/>
+				</div>	
+				
+				<div class="ui-g-1">
+				    <p:commandButton id="botaoCadastrar" value="Doar!" icon="pi pi-heart" iconPos="right"
+				                     action="cadastroUsuarioAluno.xhtml" update="formulario"
+				                     styleClass="ui-button-success" style="margin-left: -20px; width: 159px;" />
+				</div>	
+			</div>				
+	     </h:form>
+			</div>
+    </p:card>
+</h:body>
+
+</html>

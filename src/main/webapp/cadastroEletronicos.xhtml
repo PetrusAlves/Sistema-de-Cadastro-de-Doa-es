@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Cadastre-se</title>
+    <h:outputStylesheet name="estilos/cadastroEletronicos.css" />
+</h:head>
+
+<h:body>
+    
+    	
+    	<p:card styleClass="card">
+
+			<p:messages id="messages" showDetail="true" closable="true">
+                <p:autoUpdate />
+            </p:messages>
+    	
+    	<div class="card-header">
+		 <img src="resources/imagens/logodoacao.png" alt="Logo" style="max-width: 35%; height: auto;"/>
+		</div>
+		
+		
+	   <div class="form-container"> 
+	     <h:form id="formulario">
+	        
+	       <div class="ui-g-12">
+				<p:outputLabel value="Nome:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+				<p:inputText value="#{alunoBean.aluno.nome}" placeholder="Fulano Beltrano Cicrano" style="width: 38rem;"/>
+				</div>
+			</div>
+	       
+	        <div class="ui-g-12">
+	            <p:outputLabel value="CPF:" />
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-id-card"/>
+	            <p:inputMask value="#{alunoBean.aluno.cpf}" placeholder="999-999-99" mask="999-999-99" validateMask="true" />
+        	</div>
+        	</div>
+        	
+        	<div class="ui-g-12">
+	            <p:outputLabel value="Telefone:" />
+	            <div class="ui-input-icon-right">
+				<i class="pi pi-phone"/>
+	            <p:inputMask value="#{alunoBean.aluno.telefone}" placeholder="(99) 9-99999999" mask="(99) 9-99999999" validateMask="true" />
+        	</div>
+        	</div>
+        	
+        	<div class="ui-g-12">
+				<p:outputLabel for="@next" value="Que item você vai doar?"/>
+                <p:selectOneMenu id="option" value=" ">
+                    <f:selectItem itemLabel=" " itemValue=""/>
+                    <f:selectItem itemLabel="Computador Completo" itemValue="Computador"/>
+                    <f:selectItem itemLabel="Tablet" itemValue="Tablet"/>
+                    <f:selectItem itemLabel="Smartphone" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Monitor" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Processador" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Gabinete" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Fone" itemValue="Smartphone"/>
+                    <f:selectItem itemLabel="Mouse" itemValue="Smartphone"/>
+                    <f:facet name="footer">
+                        <p:divider styleClass="mt-0" />
+                        <h:outputText value="8 opções" style="font-weight:bold;"/>
+                    </f:facet>
+                </p:selectOneMenu>
+			</div>
+			
+			<div class="ui-g-12">
+				<p:outputLabel value="Marca:"/>
+		       	<div class="ui-input-icon-right">
+				<i class="pi pi-desktop"/>
+				<p:inputText value="#{alunoBean.aluno.nomeMae}" placeholder="S25/18 Pro Max" style="width: 38rem;"/>
+				</div>
+			</div>
+	     
+	        <div class="ui-g-12">
+	            <p:outputLabel value="Modelo:" />
+	        <div class="ui-input-icon-right">
+					<i class="pi pi-tablet"/>
+		            <p:inputMask value="#{alunoBean.aluno.telefone}" placeholder="IOS/Android" validateMask="true" />
+        	</div>
+        	</div>
+	        
+	        <div class="ui-g-12">
+				<p:outputLabel value="Cor:" />
+				<p:selectOneRadio>
+		            <f:selectItem itemLabel="Vermelho" itemValue="Red"/>
+		            <f:selectItem itemLabel="Verde" itemValue="Green"/>
+		            <f:selectItem itemLabel="Azul" itemValue="Blue"/>
+		            <f:selectItem itemLabel="Preto" itemValue="Red"/>
+		            <f:selectItem itemLabel="Cinza" itemValue="Green"/>
+		            <f:selectItem itemLabel="Laranja" itemValue="Blue"/>
+		            <f:selectItem itemLabel="Roxo" itemValue="Red"/>
+		            <f:selectItem itemLabel="Prata" itemValue="Green"/>
+		        </p:selectOneRadio>
+
+        	</div>
+        	
+        	<div class="ui-g-12">
+				  <p:outputLabel value="GB:" />
+				<p:selectOneRadio>
+		            <f:selectItem itemLabel="16GB" itemValue="Red"/>
+		            <f:selectItem itemLabel="32GB" itemValue="Green"/>
+		            <f:selectItem itemLabel="64GB" itemValue="Blue"/>
+		            <f:selectItem itemLabel="128GB" itemValue="Red"/>
+		            <f:selectItem itemLabel="256 GB" itemValue="Green"/>
+		            <f:selectItem itemLabel="512GB" itemValue="Blue"/>
+		            <f:selectItem itemLabel="1000TB" itemValue="Red"/>
+		        </p:selectOneRadio>
+			</div>
+				
+				<div class="ui-g-9">
+					<p:commandButton id="botaoVoltar" value="Voltar" icon="pi pi-arrow-left"
+					action="login.xhtml" update="formulario" styleClass="ui-button-secondary"/>
+				</div>	
+				
+				<div class="ui-g-1">
+				    <p:commandButton id="botaoCadastrar" value="Proxima Página" icon="pi pi-arrow-right" iconPos="right"
+				                     action="enderecoEletronicos.xhtml" update="formulario"
+				                     styleClass="ui-button-success" style="margin-left: -20px; width: 159px;" />
+				</div>
+
+	     </h:form>
+		</div>				
+    </p:card>
+</h:body>
+
+</html>
